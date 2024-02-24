@@ -9,7 +9,7 @@ interface ButtonProps {
 
 const Button: FC<ButtonProps> = ({ label, type, className, handleClick }) => {
   return (
-    <button type={type} className={`${className} rounded-lg p-2`} onClick={handleClick}>
+    <button type={type} className={`${className} rounded-lg p-2 md:p-2`} onClick={handleClick}>
       {label}
     </button>
   );

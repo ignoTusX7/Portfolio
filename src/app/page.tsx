@@ -1,9 +1,10 @@
-import Container from "@/components/Container";
+import "@/app/component.css";
+import MainSection from "@/components/MainSection";
 
 export default function Home() {
   return (
     <div className="mt-5">
-      <Container/>
+      <MainSection />
     </div>
   );
 }
