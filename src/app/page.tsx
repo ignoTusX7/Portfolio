@@ -1,7 +1,9 @@
-import Image from 'next/image'
+import Container from "@/components/Container";
 
 export default function Home() {
   return (
-    <div>Hello World</div>
-  )
+    <div className="mt-5">
+      <Container/>
+    </div>
+  );
 }
