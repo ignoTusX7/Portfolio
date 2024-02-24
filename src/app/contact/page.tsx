@@ -1,17 +1,18 @@
 "use client";
 import Button from "@/components/Button";
 import React, { useState } from "react";
+import axios from "axios";
 
 interface ContactData {
+  name: string;
   email: string;
-  subject: string;
   message: string;
 }
 
 const Contact: React.FC = () => {
   const [data, setData] = useState<ContactData>({
+    name: "",
     email: "",
-    subject: "",
     message: "",
   });
 
@@ -23,13 +24,35 @@ const Contact: React.FC = () => {
       [e.target.name as keyof ContactData]: e.target.value,
     });
   };
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(data);
+    // console.log(data);
+    const res = await axios.post("/api/email", {
+      data: {
+        name: data.name,
+        email: data.email,
+        message: data.message,
+      },
+    });
+    console.log(res);
   };
   return (
     <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl shadow-lg">
       <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="name" className="block mb-2 text-gray-50">
+            Name
+          </label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            value={data.name}
+            onChange={handleChange}
+            className="block w-full p-2 rounded-md bg-white/20 border-gray-500 border focus:border-blue-500 focus:ring-blue-500 focus:ring-1 focus:outline-none"
+          />
+        </div>
         <div>
           <label htmlFor="email" className="block mb-2 text-gray-50">
             Email
@@ -41,19 +64,6 @@ const Contact: React.FC = () => {
             value={data.email}
             onChange={handleChange}
             className="block w-full p-2 rounded-md bg-white/20 border-gray-500 border focus:border-blue-500 focus:ring-blue-500 focus:ring-1 focus:outline-none "
-          />
-        </div>
-        <div>
-          <label htmlFor="subject" className="block mb-2 text-gray-50">
-            Subject
-          </label>
-          <input
-            type="text"
-            name="subject"
-            id="subject"
-            value={data.subject}
-            onChange={handleChange}
-            className="block w-full p-2 rounded-md bg-white/20 border-gray-500 border focus:border-blue-500 focus:ring-blue-500 focus:ring-1 focus:outline-none"
           />
         </div>
         <div>
