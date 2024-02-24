@@ -12,7 +12,7 @@ interface CardProps {
 const Card: FC<CardProps> = ({ label, image, progress }) => {
   return (
     <div className="">
-      <div className="flex flex-col gap-3 border-2 border-white/40 rounded-lg p-2 duration-150 hover:scale-105 hover:shadow-2xl ">
+      <div className="flex flex-col gap-3 border-2 border-white/40 bg-white/10 backdrop-filter backdrop-blur-md rounded-lg p-2 duration-150 hover:scale-105 hover:shadow-2xl ">
         <div className="relative aspect-video rounded-lg overflow-hidden">
           <Image
             src={image}

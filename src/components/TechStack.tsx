@@ -3,7 +3,8 @@ import Card from "./Card";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import HTML from "../../public/images/frontend/html.jpeg";
 import CSS from "../../public/images/frontend/css.jpeg";
-import JSTS from "../../public/images/frontend/jsts.jpeg";
+import JS from "../../public/images/frontend/Js.png";
+import TS from "../../public/images/frontend/typescript.png";
 import jquery from "../../public/images/frontend/jquery.png";
 import BS from "../../public/images/frontend/bootstrap.jpeg";
 import Tailwind from "../../public/images/frontend/tailwind.jpg";
@@ -12,11 +13,18 @@ import NextJS from "../../public/images/frontend/nextjs13.jpeg";
 import NodeJS from "../../public/images/backend/nodejs.webp";
 import PHP from "../../public/images/backend/php.png";
 import express from "../../public/images/backend/express.png";
+import Hono from "../../public/images/backend/Hono.webp";
 import MySQL from "../../public/images/database/mysql.jpeg";
 import PG from "../../public/images/database/postgres.png";
 import Mongo from "../../public/images/database/mongo.png";
 import Git from "../../public/images/devops/git.png";
 import Docker from "../../public/images/devops/docker.webp";
+import Rest from "../../public/images/others/rest.png";
+import Soap from "../../public/images/others/soap.jpg";
+import GraphQL from "../../public/images/others/graphql.png";
+import C from "../../public/images/languages/c.jpg";
+import CPP from "../../public/images/languages/cpp.png";
+import Python from "../../public/images/languages/python.png";
 
 interface icard {
   label: string;
@@ -28,7 +36,9 @@ interface itechStack {
   frontEnd: icard[];
   backend: icard[];
   database: icard[];
+  programmingLangs: icard[];
   devOps: icard[];
+  others: icard[];
 }
 
 const techStack: itechStack = {
@@ -44,8 +54,13 @@ const techStack: itechStack = {
       progress: 90,
     },
     {
-      label: "JavaScript / TypeScript",
-      image: JSTS,
+      label: "JavaScript",
+      image: JS,
+      progress: 80,
+    },
+    {
+      label: "TypeScript",
+      image: TS,
       progress: 80,
     },
     {
@@ -86,6 +101,11 @@ const techStack: itechStack = {
       progress: 80,
     },
     {
+      label: "Hono",
+      image: Hono,
+      progress: 80,
+    },
+    {
       label: "PHP",
       image: PHP,
       progress: 80,
@@ -108,6 +128,23 @@ const techStack: itechStack = {
       progress: 80,
     },
   ],
+  programmingLangs :[
+    {
+      label: "C", 
+      image: C,
+      progress: 80
+    },
+    {
+      label: "C++", 
+      image: CPP,
+      progress: 80
+    },
+    {
+      label: "Python", 
+      image: Python,
+      progress: 60
+    },
+  ],
   devOps: [
     {
       label: "Git",
@@ -120,6 +157,23 @@ const techStack: itechStack = {
       progress: 70,
     },
   ],
+  others: [
+    {
+      label: "Rest API",
+      image : Rest,
+      progress: 90,
+    },
+    {
+      label: "SOAP",
+      image : Soap,
+      progress: 70,
+    },
+    {
+      label: "GraphQL",
+      image : GraphQL,
+      progress: 50,
+    }
+  ]
 };
 
 const TechStack = () => {
@@ -178,10 +232,44 @@ const TechStack = () => {
         </div>
         <div className="mt-5">
           <div>
+            <h2 className="text-xl">Programming Lanuguages</h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl::grid-cols-5 gap-5">
+            {techStack.programmingLangs.map((item, i) => {
+              return (
+                <Card
+                  key={i}
+                  label={item.label}
+                  image={item.image}
+                  progress={item.progress}
+                />
+              );
+            })}
+          </div>
+        </div>
+        <div className="mt-5">
+          <div>
             <h2 className="text-xl">DevOps</h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl::grid-cols-5 gap-5">
             {techStack.devOps.map((item, i) => {
+              return (
+                <Card
+                  key={i}
+                  label={item.label}
+                  image={item.image}
+                  progress={item.progress}
+                />
+              );
+            })}
+          </div>
+        </div>
+        <div className="mt-5">
+          <div>
+            <h2 className="text-xl">Others</h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl::grid-cols-5 gap-5">
+            {techStack.others.map((item, i) => {
               return (
                 <Card
                   key={i}
