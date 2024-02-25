@@ -44,7 +44,7 @@ export default function Navbar() {
       >
         <div className="mt-6 space-y-8">
           <Link
-            href={"/"}
+            href={"/projects"}
             className="flex ms-2 items-center cursor-pointer hover:-translate-y-1 duration-200"
           >
             <Lightbulb />

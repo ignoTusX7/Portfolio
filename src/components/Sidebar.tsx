@@ -66,7 +66,7 @@ const Sidebar: FC<SidebarProps> = ({}) => {
             <Button type="button" label="Home" />
           </Link>
           <Link
-            href={"/"}
+            href={"/projects"}
             className="pl-4 mb-2 flex rounded-md items-center p-1 w-56 bg-white/20 cursor-pointer hover:shadow-lg duration-150"
           >
             <Lightbulb />
