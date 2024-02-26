@@ -24,7 +24,7 @@ export default function Navbar() {
         <div className="flex items-center gap-2">
           <Menu
             onClick={() => setshowMenu(!showMenu)}
-            className="block md:hidden "
+            className="block lg:hidden "
             color="white"
           />
           <Link href={"/contact"} className="bg-white/30 backdrop-blur-sm hover:shadow-lg duration-150 flex items-center rounded-lg p-1">
@@ -40,7 +40,7 @@ export default function Navbar() {
       <div
         className={`${
           showMenu ? "flex" : "hidden"
-        } flex-col md:hidden duration-200`}
+        } flex-col lg:hidden duration-200`}
       >
         <div className="mt-6 space-y-8">
           <Link
