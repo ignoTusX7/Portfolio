@@ -18,8 +18,8 @@ const Introduction = () => {
       </p>
       <p className="text-lg mt-2 text-justify font-mono">
         Outside of tech, I indulge in exploring the fusion of technology and
-        creativity, diving into books, or simply enjoying a cup of coffee. I'm
-        enthusiastic about new opportunities and collaborations, so don't
+        creativity, diving into books, or simply enjoying a cup of coffee. I&apos;m
+        enthusiastic about new opportunities and collaborations, so don&apos;t
         hesitate to connect if you share my passions!
       </p>
     </div>
